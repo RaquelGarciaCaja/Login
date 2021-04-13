@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "cd web && npm run build && rm -rf ../server/public && mv build ../server/public && cd ../server && npm start",
+    "dev": "cd server && npm run dev & cd web && npm start",
+    "install": "cd server && npm install && cd ../web && npm install"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,5 @@
   "bugs": {
     "url": "https://github.com/RaquelGarciaCaja/Login/issues"
   },
-  "homepage": "https://github.com/RaquelGarciaCaja/Login#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
-  }
+  "homepage": "https://github.com/RaquelGarciaCaja/Login#readme"
 }
